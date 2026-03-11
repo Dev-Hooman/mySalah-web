@@ -70,6 +70,7 @@ export default function Navbar() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 36 }} className="desktop-nav">
             <a href="#features" className="nav-link">Features</a>
             <a href="#screenshots" className="nav-link">Screenshots</a>
+            <Link href="/feedback" className="nav-link">Feedback</Link>
             <Link href="/privacy" className="nav-link">Privacy</Link>
           </div>
 
@@ -170,6 +171,7 @@ export default function Navbar() {
 
         <a href="#features" className="mobile-nav-link" onClick={closeMenu}>Features</a>
         <a href="#screenshots" className="mobile-nav-link" onClick={closeMenu}>Screenshots</a>
+        <Link href="/feedback" className="mobile-nav-link" onClick={closeMenu}>Feedback</Link>
         <Link href="/privacy" className="mobile-nav-link" onClick={closeMenu}>Privacy</Link>
         <a href="#download" className="btn-primary" onClick={closeMenu} style={{ marginTop: 8, gap: 9, fontSize: 16, padding: '14px 32px' }}>
           <img

@@ -77,11 +77,11 @@ export default function Footer() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 13 }}>
               <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--accent)', letterSpacing: '2.5px', textTransform: 'uppercase' }}>
-                Legal
+                Support
               </span>
-              <Link href="/privacy" className="footer-link">
-                Privacy Policy
-              </Link>
+              <Link href="/feedback" className="footer-link">Feedback</Link>
+              <a href="mailto:mysalahnativeapp@gmail.com" className="footer-link">Contact Us</a>
+              <Link href="/privacy" className="footer-link">Privacy Policy</Link>
             </div>
           </nav>
         </div>
