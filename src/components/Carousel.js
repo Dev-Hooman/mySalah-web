@@ -4,26 +4,26 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 
 const slides = [
-  { file: 'home-screen.png',            label: 'Home Screen' },
-  { file: 'salahDailyCompletion.png',   label: 'Daily Completion' },
-  { file: 'prayerPerformance.png',      label: 'Prayer Performance' },
-  { file: 'analytic-screen.png',        label: 'Analytics Overview' },
-  { file: 'achievements.png',           label: 'Achievements' },
-  { file: 'dailyVerse-screen.png',      label: 'Daily Verse' },
-  { file: 'dailyHadiths-screen.png',    label: 'Daily Hadiths' },
-  { file: 'shareHadhit.png',            label: 'Share Hadith' },
-  { file: 'qiblaFinder-screen.png',     label: 'Qibla Compass' },
-  { file: 'mosqueFinder-screen.png',    label: 'Nearby Mosques' },
-  { file: 'dhikar-counter-screen.png',  label: 'Dhikr Counter' },
-  { file: 'mydhikar-screen.png',        label: 'My Dhikr' },
-  { file: 'new-dhikar-screen.png',      label: 'New Dhikr' },
-  { file: '99Names-screen.png',         label: '99 Names of Allah' },
-  { file: 'settings-screen.png',        label: 'Settings' },
+  { file: 'home-screen.png', label: 'Home Screen' },
+  { file: 'qiblaFinder-screen.png', label: 'Qibla Compass' },
+  { file: 'analytic-screen.png', label: 'Analytics Overview' },
+  { file: 'prayerPerformance.png', label: 'Prayer Performance' },
+  { file: 'salahDailyCompletion.png', label: 'Daily Completion' },
+  { file: 'achievements.png', label: 'Achievements' },
+  { file: 'mosqueFinder-screen.png', label: 'Nearby Mosques' },
+  { file: 'dailyHadiths-screen.png', label: 'Daily Hadiths' },
+  { file: 'dailyVerse-screen.png', label: 'Daily Verse' },
+  { file: 'shareHadhit.png', label: 'Share Hadith' },
+  { file: 'new-dhikar-screen.png', label: 'New Dhikr' },
+  { file: 'mydhikar-screen.png', label: 'My Dhikr' },
+  { file: 'dhikar-counter-screen.png', label: 'Dhikr Counter' },
+  { file: '99Names-screen.png', label: '99 Names of Allah' },
+  // { file: 'settings-screen.png', label: 'Settings' },
 ];
 
 const ITEM_WIDTH = 260;
-const ITEM_GAP   = 20;
-const STEP       = ITEM_WIDTH + ITEM_GAP;
+const ITEM_GAP = 20;
+const STEP = ITEM_WIDTH + ITEM_GAP;
 const DRAG_THRESHOLD = 8;   // px before we consider it a drag
 const SWIPE_THRESHOLD = 40; // px to trigger a slide change
 
@@ -40,13 +40,13 @@ const IslamicBorderSVG = () => (
 );
 
 export default function Carousel() {
-  const [active, setActive]     = useState(0);
+  const [active, setActive] = useState(0);
   const [grabbing, setGrabbing] = useState(false); // only for cursor style
 
   // Refs for synchronous drag state — no React batching issues
-  const startX    = useRef(null);
-  const didDrag   = useRef(false);
-  const timerRef  = useRef(null);
+  const startX = useRef(null);
+  const didDrag = useRef(false);
+  const timerRef = useRef(null);
 
   const next = useCallback(() => setActive((p) => (p + 1) % slides.length), []);
   const prev = useCallback(() => setActive((p) => (p - 1 + slides.length) % slides.length), []);
@@ -64,7 +64,7 @@ export default function Carousel() {
   /* ── Mouse handlers ── */
   const onMouseDown = useCallback((e) => {
     e.preventDefault(); // blocks browser's native image drag
-    startX.current  = e.clientX;
+    startX.current = e.clientX;
     didDrag.current = false;
     setGrabbing(true);
   }, []);
@@ -89,7 +89,7 @@ export default function Carousel() {
 
   /* ── Touch handlers ── */
   const onTouchStart = useCallback((e) => {
-    startX.current  = e.touches[0].clientX;
+    startX.current = e.touches[0].clientX;
     didDrag.current = false;
   }, []);
 
@@ -127,21 +127,23 @@ export default function Carousel() {
       <div style={{ paddingTop: 72, paddingBottom: 16 }}>
         {/* Header */}
         <div className="max-content" style={{ textAlign: 'center', marginBottom: 56 }}>
-          <p className="section-eyebrow anim-fade-up" style={{ marginBottom: 16 }}>App Screenshots</p>
+          <p className="section-eyebrow anim-fade-up" style={{ marginBottom: 20, justifyContent: 'center' }}>App Screenshots</p>
           <h2
             className="anim-fade-up"
             data-delay="80"
             style={{
-              fontSize: 'clamp(26px, 3.5vw, 36px)',
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
+              fontSize: 'clamp(30px, 4vw, 44px)',
               fontWeight: 700,
-              letterSpacing: '-0.7px',
+              letterSpacing: '-0.4px',
               color: 'var(--text)',
               marginBottom: 14,
             }}
           >
-            See it in action
+            See it in{' '}
+            <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>action</span>
           </h2>
-          <p className="anim-fade-up" data-delay="160" style={{ fontSize: 15, color: 'var(--subtext)', lineHeight: 1.7 }}>
+          <p className="anim-fade-up" data-delay="160" style={{ fontSize: 15, color: 'var(--subtext)', lineHeight: 1.75 }}>
             15 screens crafted for beauty and clarity.
           </p>
         </div>
@@ -176,10 +178,10 @@ export default function Carousel() {
             }}
           >
             {slides.map((slide, i) => {
-              const dist     = Math.abs(i - active);
+              const dist = Math.abs(i - active);
               const isActive = i === active;
-              const scale    = isActive ? 1 : 0.85;
-              const opacity  = dist === 0 ? 1 : dist === 1 ? 0.55 : 0.3;
+              const scale = isActive ? 1 : 0.85;
+              const opacity = dist === 0 ? 1 : dist === 1 ? 0.55 : 0.3;
 
               return (
                 <div
@@ -206,7 +208,7 @@ export default function Carousel() {
                       position: 'relative',
                     }}
                   >
-                      <Image
+                    <Image
                       src={`/images/mockups/${slide.file}`}
                       alt={`mySalah — ${slide.label}`}
                       width={260}

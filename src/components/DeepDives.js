@@ -61,12 +61,12 @@ function Bullet({ children, delay = 0 }) {
 
 function TierRow() {
   const tiers = [
-    { label: 'Bronze',   color: '#CD7F32' },
-    { label: 'Silver',   color: '#C0C0C0' },
-    { label: 'Gold',     color: '#FFD700' },
+    { label: 'Bronze', color: '#CD7F32' },
+    { label: 'Silver', color: '#C0C0C0' },
+    { label: 'Gold', color: '#FFD700' },
     { label: 'Platinum', color: '#E5E4E2' },
-    { label: 'Diamond',  color: '#B9F2FF' },
-    { label: 'Special',  color: '#9370DB' },
+    { label: 'Diamond', color: '#B9F2FF' },
+    { label: 'Special', color: '#9370DB' },
   ];
   return (
     <div
@@ -167,27 +167,31 @@ export default function DeepDives() {
   return (
     <section
       id="deep-dives"
+      aria-labelledby="deep-dives-heading"
       style={{
-        paddingTop: 96,
-        paddingBottom: 32,
+        paddingTop: 100,
+        paddingBottom: 40,
         background: 'var(--background)',
       }}
     >
       <div className="max-content">
-        <div className="anim-fade-up" style={{ textAlign: 'center', marginBottom: 80 }}>
-          <p className="section-eyebrow" style={{ marginBottom: 16 }}>
+        <div className="anim-fade-up" style={{ textAlign: 'center', marginBottom: 88 }}>
+          <p className="section-eyebrow" style={{ marginBottom: 20, justifyContent: 'center' }}>
             Feature Deep Dives
           </p>
           <h2
+            id="deep-dives-heading"
             style={{
-              fontSize: 'clamp(26px, 3.5vw, 36px)',
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
+              fontSize: 'clamp(30px, 4vw, 44px)',
               fontWeight: 700,
-              letterSpacing: '-0.7px',
+              letterSpacing: '-0.4px',
               color: 'var(--text)',
-              lineHeight: 1.2,
+              lineHeight: 1.15,
             }}
           >
-            Built for every moment of your spiritual journey
+            Built for every moment of your{' '}
+            <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>spiritual journey</span>
           </h2>
         </div>
 
@@ -216,12 +220,13 @@ export default function DeepDives() {
                   <h3
                     className="anim-fade-up"
                     style={{
-                      fontSize: 'clamp(22px, 2.5vw, 28px)',
+                      fontFamily: 'var(--font-cormorant), Georgia, serif',
+                      fontSize: 'clamp(24px, 2.8vw, 32px)',
                       fontWeight: 700,
-                      letterSpacing: '-0.5px',
+                      letterSpacing: '-0.3px',
                       color: 'var(--text)',
                       marginBottom: 24,
-                      lineHeight: 1.25,
+                      lineHeight: 1.2,
                     }}
                   >
                     {dive.title}

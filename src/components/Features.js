@@ -41,39 +41,60 @@ export default function Features() {
   return (
     <section
       id="features"
+      aria-labelledby="features-heading"
       style={{
-        paddingTop: 96,
-        paddingBottom: 96,
+        paddingTop: 100,
+        paddingBottom: 100,
         background: 'var(--background)',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <div className="max-content">
+      {/* Subtle background gradient */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: 800,
+          height: 400,
+          background: 'radial-gradient(ellipse, var(--primary-05) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="max-content" style={{ position: 'relative' }}>
         {/* Section header */}
         <div
           className="anim-fade-up"
-          style={{ textAlign: 'center', marginBottom: 60 }}
+          style={{ textAlign: 'center', marginBottom: 64 }}
         >
-          <p className="section-eyebrow" style={{ marginBottom: 16 }}>
+          <p className="section-eyebrow" style={{ marginBottom: 20, justifyContent: 'center' }}>
             What&apos;s Inside
           </p>
           <h2
+            id="features-heading"
             style={{
-              fontSize: 'clamp(28px, 3.5vw, 38px)',
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
+              fontSize: 'clamp(32px, 4vw, 46px)',
               fontWeight: 700,
-              letterSpacing: '-0.8px',
+              letterSpacing: '-0.5px',
               color: 'var(--text)',
-              lineHeight: 1.2,
-              marginBottom: 16,
+              lineHeight: 1.15,
+              marginBottom: 18,
             }}
           >
-            Everything you need for your spiritual journey
+            Everything you need for your{' '}
+            <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>spiritual journey</span>
           </h2>
           <p
             style={{
               fontSize: 16,
               color: 'var(--subtext)',
-              lineHeight: 1.7,
-              maxWidth: 500,
+              lineHeight: 1.75,
+              maxWidth: 480,
               margin: '0 auto',
             }}
           >
@@ -85,28 +106,34 @@ export default function Features() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: 20,
+            gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))',
+            gap: 22,
           }}
         >
           {features.map((feature, i) => (
-            <div
+            <article
               key={feature.title}
               className="feature-card anim-fade-up"
-              data-delay={i * 80}
+              data-delay={i * 90}
             >
               <div className="card-icon">
-                <span className="material-symbols-outlined" style={{ fontSize: 26, lineHeight: 1 }}>
+                <span
+                  className="material-symbols-outlined"
+                  style={{ fontSize: 26, lineHeight: 1 }}
+                  aria-hidden="true"
+                >
                   {feature.icon}
                 </span>
               </div>
               <h3
                 style={{
-                  fontSize: 17,
+                  fontFamily: 'var(--font-cormorant), Georgia, serif',
+                  fontSize: 20,
                   fontWeight: 700,
                   color: 'var(--text)',
                   marginBottom: 10,
-                  letterSpacing: '-0.2px',
+                  letterSpacing: '-0.1px',
+                  lineHeight: 1.2,
                 }}
               >
                 {feature.title}
@@ -114,13 +141,13 @@ export default function Features() {
               <p
                 style={{
                   fontSize: 14,
-                  lineHeight: 1.65,
+                  lineHeight: 1.7,
                   color: 'var(--subtext)',
                 }}
               >
                 {feature.description}
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </div>

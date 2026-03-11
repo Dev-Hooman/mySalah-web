@@ -2,80 +2,102 @@ export default function DownloadCTA() {
   return (
     <section
       id="download"
+      aria-labelledby="download-heading"
       style={{
-        paddingTop: 100,
-        paddingBottom: 100,
+        paddingTop: 110,
+        paddingBottom: 110,
         background: 'var(--background)',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      {/* Subtle background accent */}
+      {/* Background accents */}
       <div
         style={{
           position: 'absolute',
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          width: 600,
-          height: 600,
+          width: 640,
+          height: 640,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, var(--primary-05) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, var(--primary-05) 0%, transparent 65%)',
           pointerEvents: 'none',
         }}
+        aria-hidden="true"
+      />
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: 400,
+          height: 400,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, var(--accent-light) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }}
+        aria-hidden="true"
       />
 
       <div className="max-content" style={{ position: 'relative', zIndex: 1 }}>
-        {/* Decorative diamond */}
+        {/* Decorative vertical connector */}
         <div
           className="anim-fade-up"
           style={{
             display: 'flex',
-            justifyContent: 'center',
-            gap: 8,
-            marginBottom: 32,
+            flexDirection: 'column',
             alignItems: 'center',
+            gap: 0,
+            marginBottom: 36,
           }}
+          aria-hidden="true"
         >
-          <div style={{ width: 1, height: 48, background: 'linear-gradient(to bottom, transparent, var(--border))' }} />
-          <div
-            style={{
-              width: 10,
-              height: 10,
-              background: 'var(--primary)',
-              transform: 'rotate(45deg)',
-              borderRadius: 2,
-              opacity: 0.6,
-            }}
-          />
-          <div style={{ width: 1, height: 48, background: 'linear-gradient(to bottom, transparent, var(--border))' }} />
+          <div style={{ width: 1, height: 52, background: 'linear-gradient(to bottom, transparent, var(--accent))' }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <div style={{ width: 1, height: 52, background: 'linear-gradient(to bottom, var(--accent), transparent)', position: 'absolute', opacity: 0, pointerEvents: 'none' }} />
+            <div
+              style={{
+                width: 10,
+                height: 10,
+                background: 'var(--accent)',
+                transform: 'rotate(45deg)',
+                borderRadius: 2,
+                boxShadow: '0 0 12px rgba(201,168,76,0.5)',
+              }}
+            />
+          </div>
         </div>
 
         <h2
+          id="download-heading"
           className="anim-fade-up"
-          data-delay="80"
+          data-delay="60"
           style={{
-            fontSize: 'clamp(32px, 4vw, 52px)',
-            fontWeight: 800,
-            letterSpacing: '-1.5px',
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
+            fontSize: 'clamp(36px, 4.5vw, 58px)',
+            fontWeight: 700,
+            letterSpacing: '-0.5px',
             color: 'var(--text)',
             lineHeight: 1.1,
             marginBottom: 20,
           }}
         >
-          Begin your journey today
+          Begin your journey{' '}
+          <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>today</span>
         </h2>
 
         <p
           className="anim-fade-up"
-          data-delay="160"
+          data-delay="130"
           style={{
-            fontSize: 20,
+            fontSize: 19,
             color: 'var(--subtext)',
-            marginBottom: 44,
+            marginBottom: 48,
             fontWeight: 500,
-            letterSpacing: '1px',
+            letterSpacing: '0.5px',
           }}
         >
           Free. Private. Beautiful.
@@ -83,7 +105,7 @@ export default function DownloadCTA() {
 
         <div
           className="anim-fade-up"
-          data-delay="240"
+          data-delay="200"
           style={{
             display: 'flex',
             flexDirection: 'column',
@@ -96,15 +118,21 @@ export default function DownloadCTA() {
             className="btn-primary"
             style={{
               fontSize: 17,
-              padding: '16px 40px',
-              boxShadow: '0 4px 24px rgba(128,128,0,0.25)',
+              padding: '16px 44px',
+              boxShadow: '0 6px 28px rgba(74,103,65,0.3), 0 2px 8px rgba(0,0,0,0.1)',
+              gap: 10,
             }}
           >
-            <img src="/images/android.png" alt="Android" style={{ width: 24, height: 24, objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+            <img
+              src="/images/android.png"
+              alt=""
+              aria-hidden="true"
+              style={{ width: 22, height: 22, objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+            />
             Download for Android
           </a>
 
-          <p style={{ fontSize: 13, color: 'var(--subtext)', marginTop: 4, fontStyle: 'italic' }}>
+          <p style={{ fontSize: 12.5, color: 'var(--subtext)', marginTop: 2, fontStyle: 'italic', opacity: 0.8 }}>
             iOS coming soon
           </p>
         </div>
@@ -112,12 +140,12 @@ export default function DownloadCTA() {
         {/* Trust badges */}
         <div
           className="anim-fade-up"
-          data-delay="320"
+          data-delay="280"
           style={{
             display: 'flex',
             justifyContent: 'center',
-            gap: 32,
-            marginTop: 52,
+            gap: '16px 36px',
+            marginTop: 56,
             flexWrap: 'wrap',
           }}
         >
@@ -132,7 +160,7 @@ export default function DownloadCTA() {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 8,
+                gap: 7,
                 color: 'var(--subtext)',
                 fontSize: 13,
                 fontWeight: 500,
@@ -140,7 +168,8 @@ export default function DownloadCTA() {
             >
               <span
                 className="material-symbols-outlined"
-                style={{ fontSize: 18, color: 'var(--primary)', lineHeight: 1 }}
+                style={{ fontSize: 16, color: 'var(--primary)', lineHeight: 1 }}
+                aria-hidden="true"
               >
                 {icon}
               </span>

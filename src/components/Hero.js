@@ -7,7 +7,7 @@ const IslamicPattern = () => (
     width="100%"
     height="100%"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ position: 'absolute', inset: 0, opacity: 0.035 }}
+    style={{ position: 'absolute', inset: 0, opacity: 0.04 }}
     aria-hidden="true"
   >
     <defs>
@@ -22,8 +22,9 @@ const IslamicPattern = () => (
           <polygon
             points="32,0 11.8,4.9 22.6,22.6 4.9,11.8 0,32 -4.9,11.8 -22.6,22.6 -11.8,4.9 -32,0 -11.8,-4.9 -22.6,-22.6 -4.9,-11.8 0,-32 4.9,-11.8 22.6,-22.6 11.8,-4.9"
             fill="none"
-            stroke="var(--primary)"
-            strokeWidth="0.7"
+            stroke="var(--accent)"
+            strokeWidth="0.5"
+            opacity="0.6"
           />
         </g>
       </pattern>
@@ -36,33 +37,62 @@ export default function Hero() {
   return (
     <section
       id="hero"
+      aria-label="My Salah — Islamic Prayer Tracking App"
       style={{
         position: 'relative',
         overflow: 'hidden',
-        paddingTop: 140,
-        paddingBottom: 100,
+        paddingTop: 148,
+        paddingBottom: 110,
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
       }}
     >
-      {/* Geometric background pattern */}
+      {/* Background radial gradient */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'radial-gradient(ellipse 80% 60% at 60% 50%, var(--primary-05) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Islamic geometric pattern */}
       <IslamicPattern />
 
-      {/* Olive glow behind phone */}
+      {/* Primary glow behind phone */}
       <div
         className="hero-glow-orb"
         style={{
           position: 'absolute',
-          right: '10%',
+          right: '8%',
           top: '50%',
           transform: 'translateY(-50%)',
-          width: 480,
-          height: 480,
+          width: 520,
+          height: 520,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(128,128,0,0.18) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(74,103,65,0.14) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
+        aria-hidden="true"
+      />
+
+      {/* Gold accent orb */}
+      <div
+        className="gold-orb"
+        style={{
+          position: 'absolute',
+          left: '5%',
+          top: '25%',
+          width: 300,
+          height: 300,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }}
+        aria-hidden="true"
       />
 
       <div className="max-content" style={{ position: 'relative', zIndex: 1, width: '100%' }}>
@@ -70,40 +100,73 @@ export default function Hero() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: 60,
+          gap: 64,
           flexWrap: 'wrap',
         }}>
+
           {/* Left: Text content */}
-          <div style={{ flex: 1, minWidth: 300, maxWidth: 520 }}>
-            <p className="section-eyebrow hero-eyebrow" style={{ marginBottom: 20 }}>
-              Islamic Prayer Companion
-            </p>
+          <div style={{ flex: 1, minWidth: 300, maxWidth: 540 }}>
+
+            {/* Eyebrow label */}
+            <div className="hero-eyebrow" style={{ marginBottom: 24 }}>
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '6px 16px',
+                borderRadius: 9999,
+                background: 'var(--accent-light)',
+                border: '1px solid rgba(201, 168, 76, 0.3)',
+                color: 'var(--accent)',
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: '3px',
+                textTransform: 'uppercase',
+                fontFamily: 'var(--font-jakarta), sans-serif',
+              }}>
+                <span
+                  className="material-symbols-outlined"
+                  style={{ fontSize: 13, lineHeight: 1 }}
+                  aria-hidden="true"
+                >
+                  mosque
+                </span>
+                Islamic Prayer Companion
+              </span>
+            </div>
 
             <h1
               className="hero-headline"
               style={{
-                fontSize: 'clamp(38px, 5vw, 58px)',
-                fontWeight: 800,
-                lineHeight: 1.08,
-                letterSpacing: '-1.5px',
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
+                fontSize: 'clamp(44px, 5.5vw, 68px)',
+                fontWeight: 700,
+                lineHeight: 1.06,
+                letterSpacing: '-1px',
                 color: 'var(--text)',
-                marginBottom: 24,
+                marginBottom: 28,
               }}
             >
               Your prayers,{' '}
               <br />
-              <span style={{ color: 'var(--primary)' }}>perfectly</span>{' '}
+              <span style={{
+                color: 'var(--primary)',
+                fontStyle: 'italic',
+              }}>
+                perfectly
+              </span>{' '}
               tracked.
             </h1>
 
             <p
               className="hero-sub"
               style={{
-                fontSize: 18,
-                lineHeight: 1.75,
+                fontSize: 17,
+                lineHeight: 1.8,
                 color: 'var(--subtext)',
-                marginBottom: 36,
+                marginBottom: 40,
                 maxWidth: 460,
+                fontWeight: 400,
               }}
             >
               Track all five daily prayers, build sacred streaks, earn
@@ -113,35 +176,58 @@ export default function Hero() {
 
             <div
               className="hero-ctas"
-              style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 28 }}
+              style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 32 }}
             >
-              <a href="#download" className="btn-primary">
-                <img src="/images/android.png" alt="Android" style={{ width: 20, height: 20, objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+              <a href="#download" className="btn-primary" style={{ fontSize: 15, padding: '14px 28px' }}>
+                <img
+                  src="/images/android.png"
+                  alt=""
+                  aria-hidden="true"
+                  style={{ width: 19, height: 19, objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
                 Download for Android
               </a>
-              <a href="#features" className="btn-secondary">
+              <a href="#features" className="btn-secondary" style={{ fontSize: 15 }}>
                 See Features
               </a>
             </div>
 
+            {/* Trust row */}
             <div
               className="hero-trust"
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 8,
-                color: 'var(--subtext)',
-                fontSize: 13,
-                fontWeight: 500,
+                flexWrap: 'wrap',
+                gap: '10px 20px',
               }}
             >
-              <span
-                className="material-symbols-outlined"
-                style={{ fontSize: 16, color: 'var(--primary)', lineHeight: 1 }}
-              >
-                lock
-              </span>
-              No account needed. No data collected. Completely free.
+              {[
+                { icon: 'lock', text: 'No account needed' },
+                { icon: 'cloud_off', text: 'No data collected' },
+                { icon: 'money_off', text: 'Completely free' },
+              ].map(({ icon, text }) => (
+                <div
+                  key={text}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 6,
+                    color: 'var(--subtext)',
+                    fontSize: 12.5,
+                    fontWeight: 500,
+                  }}
+                >
+                  <span
+                    className="material-symbols-outlined"
+                    style={{ fontSize: 14, color: 'var(--primary)', lineHeight: 1 }}
+                    aria-hidden="true"
+                  >
+                    {icon}
+                  </span>
+                  {text}
+                </div>
+              ))}
             </div>
           </div>
 
@@ -153,17 +239,44 @@ export default function Hero() {
               justifyContent: 'center',
               alignItems: 'center',
               flexShrink: 0,
-              minWidth: 240,
+              minWidth: 260,
+              position: 'relative',
             }}
           >
+            {/* Decorative ring behind phone */}
+            <div
+              style={{
+                position: 'absolute',
+                width: 360,
+                height: 360,
+                borderRadius: '50%',
+                border: '1px solid var(--border)',
+                opacity: 0.5,
+                pointerEvents: 'none',
+              }}
+              aria-hidden="true"
+            />
+            <div
+              style={{
+                position: 'absolute',
+                width: 440,
+                height: 440,
+                borderRadius: '50%',
+                border: '1px dashed var(--border)',
+                opacity: 0.3,
+                pointerEvents: 'none',
+              }}
+              aria-hidden="true"
+            />
+
             <div className="hero-phone-float">
-              <div className="phone-frame" style={{ width: 270 }}>
+              <div className="phone-frame" style={{ width: 275 }}>
                 <div className="frame-inner" style={{ cursor: 'default' }}>
                   <Image
                     src="/images/mockups/home-screen.png"
-                    alt="mySalah Home Screen — Prayer times, streak, and greeting"
-                    width={270}
-                    height={580}
+                    alt="My Salah app home screen showing prayer times, streak tracker, and daily greeting"
+                    width={275}
+                    height={592}
                     priority
                     style={{ width: '100%', height: 'auto', display: 'block' }}
                   />
@@ -173,7 +286,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }
