@@ -48,7 +48,7 @@ export default function Footer() {
                 alt="My Salah app icon"
                 width={34}
                 height={34}
-                style={{ borderRadius: 9, boxShadow: '0 2px 8px rgba(74,103,65,0.2)' }}
+                style={{ borderRadius: 9, boxShadow: '0 2px 8px rgba(128,128,0,0.2)' }}
               />
               <span style={{
                 fontFamily: 'var(--font-cormorant), Georgia, serif',

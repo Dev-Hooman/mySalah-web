@@ -5,8 +5,8 @@ export default function PrivacyBanner() {
     <section
       style={{
         background: 'linear-gradient(135deg, var(--primary-05) 0%, var(--accent-light) 100%)',
-        borderTop: '1px solid rgba(74,103,65,0.12)',
-        borderBottom: '1px solid rgba(74,103,65,0.12)',
+        borderTop: '1px solid rgba(128,128,0,0.12)',
+        borderBottom: '1px solid rgba(128,128,0,0.12)',
         paddingTop: 80,
         paddingBottom: 80,
         position: 'relative',
@@ -23,7 +23,7 @@ export default function PrivacyBanner() {
           width: 500,
           height: 500,
           borderRadius: '50%',
-          border: '1px dashed rgba(74,103,65,0.1)',
+          border: '1px dashed rgba(128,128,0,0.1)',
           pointerEvents: 'none',
         }}
         aria-hidden="true"

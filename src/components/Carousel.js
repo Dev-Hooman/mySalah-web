@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
+import { useMockupPath } from '@/hooks/useTheme';
 
 const slides = [
   { file: 'home-screen.png', label: 'Home Screen' },
@@ -40,6 +41,7 @@ const IslamicBorderSVG = () => (
 );
 
 export default function Carousel() {
+  const mockup = useMockupPath();
   const [active, setActive] = useState(0);
   const [grabbing, setGrabbing] = useState(false); // only for cursor style
 
@@ -209,8 +211,8 @@ export default function Carousel() {
                     }}
                   >
                     <Image
-                      src={`/images/mockups/${slide.file}`}
-                      alt={`mySalah — ${slide.label}`}
+                      src={mockup(slide.file)}
+                      alt={`My Salah — ${slide.label}`}
                       width={260}
                       height={560}
                       draggable={false}

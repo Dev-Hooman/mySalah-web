@@ -42,7 +42,7 @@ export default function Navbar() {
               borderRadius: 9,
               overflow: 'hidden',
               flexShrink: 0,
-              boxShadow: '0 2px 8px rgba(74,103,65,0.25)',
+              boxShadow: '0 2px 8px rgba(128,128,0,0.25)',
             }}>
               <Image
                 src="/icon.png"
@@ -159,7 +159,7 @@ export default function Navbar() {
         </button>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-          <Image src="/icon.png" alt="My Salah" width={44} height={44} style={{ borderRadius: 12, boxShadow: '0 2px 10px rgba(74,103,65,0.3)' }} />
+          <Image src="/icon.png" alt="My Salah" width={44} height={44} style={{ borderRadius: 12, boxShadow: '0 2px 10px rgba(128,128,0,0.3)' }} />
           <span style={{
             fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontWeight: 700,

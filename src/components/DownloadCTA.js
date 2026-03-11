@@ -119,7 +119,7 @@ export default function DownloadCTA() {
             style={{
               fontSize: 17,
               padding: '16px 44px',
-              boxShadow: '0 6px 28px rgba(74,103,65,0.3), 0 2px 8px rgba(0,0,0,0.1)',
+              boxShadow: '0 6px 28px rgba(128,128,0,0.3), 0 2px 8px rgba(0,0,0,0.1)',
               gap: 10,
             }}
           >

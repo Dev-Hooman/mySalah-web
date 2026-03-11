@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useMockupPath } from '@/hooks/useTheme';
 
 const SectionDivider = () => (
   <div className="section-divider" style={{ margin: '0 auto 80px', padding: '0 24px' }}>
@@ -105,8 +108,8 @@ const deepDives = [
   {
     title: 'Track every prayer, every day',
     note: 'Powered by Aladhan API — accurate times for 22+ cities worldwide',
-    image: '/images/mockups/home-screen.png',
-    alt: 'mySalah home screen showing prayer times',
+    image: 'home-screen.png',
+    alt: 'My Salah home screen showing prayer times',
     bullets: [
       'One-tap prayer logging with automatic time detection',
       'Smart status system: Current, Next, Upcoming, Missed',
@@ -116,8 +119,8 @@ const deepDives = [
   },
   {
     title: 'Turn consistency into visible progress',
-    image: '/images/mockups/achievements.png',
-    alt: 'mySalah achievements screen',
+    image: 'achievements.png',
+    alt: 'My Salah achievements screen',
     bullets: [
       '30 achievements across Bronze, Silver, Gold, Platinum, Diamond, and Special tiers',
       'Streak milestones: 7-day, 30-day, 90-day, 365-day marks with celebrations',
@@ -128,8 +131,8 @@ const deepDives = [
   },
   {
     title: 'Understand your prayer patterns',
-    image: '/images/mockups/analytic-screen.png',
-    alt: 'mySalah analytics overview',
+    image: 'analytic-screen.png',
+    alt: 'My Salah analytics overview',
     bullets: [
       'Letter grades from A+ to F based on your completion rate',
       'Weekly and monthly bar charts — tap any day for details',
@@ -140,8 +143,8 @@ const deepDives = [
   },
   {
     title: 'Daily spiritual nourishment',
-    image: '/images/mockups/dailyVerse-screen.png',
-    alt: 'mySalah daily verse parchment card',
+    image: 'dailyVerse-screen.png',
+    alt: 'My Salah daily verse parchment card',
     bullets: [
       'A new Quranic verse every day — Arabic with English and Urdu translations',
       'Authenticated Hadiths refreshed daily with narrator and source details',
@@ -152,8 +155,8 @@ const deepDives = [
   },
   {
     title: 'Find your direction, find your community',
-    image: '/images/mockups/qiblaFinder-screen.png',
-    alt: 'mySalah Qibla compass',
+    image: 'qiblaFinder-screen.png',
+    alt: 'My Salah Qibla compass',
     bullets: [
       'Real-time Qibla compass using device sensors',
       'Haptic feedback when you\'re aligned with Makkah',
@@ -164,6 +167,7 @@ const deepDives = [
 ];
 
 export default function DeepDives() {
+  const mockup = useMockupPath();
   return (
     <section
       id="deep-dives"
@@ -212,7 +216,7 @@ export default function DeepDives() {
               >
                 {/* Mockup: left on even, right on odd */}
                 {isEven && (
-                  <PhoneMockup src={dive.image} alt={dive.alt} delay={0} />
+                  <PhoneMockup src={mockup(dive.image)} alt={dive.alt} delay={0} />
                 )}
 
                 {/* Text content */}
@@ -260,7 +264,7 @@ export default function DeepDives() {
 
                 {/* Mockup: right on odd */}
                 {!isEven && (
-                  <PhoneMockup src={dive.image} alt={dive.alt} delay={0} />
+                  <PhoneMockup src={mockup(dive.image)} alt={dive.alt} delay={0} />
                 )}
               </div>
 

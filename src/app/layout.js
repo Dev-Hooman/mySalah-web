@@ -16,7 +16,7 @@ const cormorant = Cormorant_Garamond({
   style: ["normal", "italic"],
 });
 
-const APP_URL = "https://mysalah.app";
+const APP_URL = "https://mysalah.vercel.app";
 
 export const metadata = {
   metadataBase: new URL(APP_URL),
@@ -52,6 +52,11 @@ export const metadata = {
   alternates: {
     canonical: APP_URL,
   },
+  icons: {
+    icon: [{ url: "/icon.png", sizes: "1024x1024", type: "image/png" }],
+    apple: [{ url: "/icon.png", sizes: "1024x1024", type: "image/png" }],
+    shortcut: "/icon.png",
+  },
   openGraph: {
     title: "My Salah — Islamic Prayer Tracking App",
     description:
@@ -62,9 +67,9 @@ export const metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/icon.png",
+        width: 1024,
+        height: 1024,
         alt: "My Salah — Islamic Prayer Tracking App",
       },
     ],
@@ -74,7 +79,7 @@ export const metadata = {
     title: "My Salah — Islamic Prayer Tracking App",
     description:
       "Track your five daily prayers, build sacred streaks, earn achievements, and deepen your spiritual practice.",
-    images: ["/og-image.png"],
+    images: ["/icon.png"],
   },
   category: "lifestyle",
 };
@@ -129,9 +134,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
         />
-        <link rel="icon" href="/icon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/icon.png" />
-        <meta name="theme-color" content="#4a6741" />
+        <meta name="theme-color" content="#808000" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />

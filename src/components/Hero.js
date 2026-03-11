@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useMockupPath } from '@/hooks/useTheme';
 
 const IslamicPattern = () => (
   <svg
@@ -34,6 +35,7 @@ const IslamicPattern = () => (
 );
 
 export default function Hero() {
+  const mockup = useMockupPath();
   return (
     <section
       id="hero"
@@ -73,7 +75,7 @@ export default function Hero() {
           width: 520,
           height: 520,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(74,103,65,0.14) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(128,128,0,0.14) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
         aria-hidden="true"
@@ -273,7 +275,7 @@ export default function Hero() {
               <div className="phone-frame" style={{ width: 275 }}>
                 <div className="frame-inner" style={{ cursor: 'default' }}>
                   <Image
-                    src="/images/mockups/home-screen.png"
+                    src={mockup('home-screen.png')}
                     alt="My Salah app home screen showing prayer times, streak tracker, and daily greeting"
                     width={275}
                     height={592}

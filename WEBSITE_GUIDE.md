@@ -483,7 +483,7 @@ public/images/
   width: 280px;
   border-radius: 40px;
   overflow: hidden;
-  border: 8px solid var(--phone-bezel); /* #1a1a1a for dark frame, #e5e5e5 for light */
+  border: 7px solid var(--phone-bezel); /* #1a1a1a for dark frame, #e5e5e5 for light */
   box-shadow: var(--shadow-lg);
 }
 
