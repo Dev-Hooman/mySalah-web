@@ -205,7 +205,6 @@ export default function PrivacyPage() {
               <LI>Does <strong style={{ color: 'var(--text)' }}>not</strong> require account creation, registration, or sign-in</LI>
               <LI>Does <strong style={{ color: 'var(--text)' }}>not</strong> collect, store, or transmit your personal information to any server</LI>
               <LI>Does <strong style={{ color: 'var(--text)' }}>not</strong> use analytics or tracking SDKs (no Google Analytics, Firebase, Mixpanel, etc.)</LI>
-              <LI>Does <strong style={{ color: 'var(--text)' }}>not</strong> use advertising SDKs or display ads</LI>
               <LI>Does <strong style={{ color: 'var(--text)' }}>not</strong> share data with third parties</LI>
               <LI>Does <strong style={{ color: 'var(--text)' }}>not</strong> use cookies or similar tracking technologies</LI>
               <LI>Does <strong style={{ color: 'var(--text)' }}>not</strong> collect usage statistics, crash reports, or telemetry</LI>

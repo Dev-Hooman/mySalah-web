@@ -590,7 +590,6 @@ mySalah is designed with privacy as a fundamental principle. The App:
 - Does **not** require account creation, registration, or sign-in
 - Does **not** collect, store, or transmit your personal information to any server
 - Does **not** use analytics or tracking SDKs (no Google Analytics, no Firebase Analytics, no Mixpanel, etc.)
-- Does **not** use advertising SDKs or display ads
 - Does **not** share data with third parties
 - Does **not** use cookies or similar tracking technologies
 - Does **not** collect usage statistics, crash reports, or telemetry
